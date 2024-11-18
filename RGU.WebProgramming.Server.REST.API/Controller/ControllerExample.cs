@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using RGU.WebProgramming.Server.REST.Models;
+using Microsoft.AspNetCore.Mvc;
+using RGU.WebProgramming.Server.DbContext;
+
 
 namespace RGU.WebProgramming.Server.REST.API.Controller;
 
@@ -20,19 +23,23 @@ public sealed class ControllerExample:
     /// 
     /// </summary>
     private readonly ILogger<ControllerExample> _logger;
+    private readonly ApplicationDbContext _context;
     
     #endregion
     
     #region Constructors
-    
+
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="context"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public ControllerExample(
+        ApplicationDbContext context, 
         ILogger<ControllerExample> logger)
     {
+        _context = context ?? throw new ArgumentNullException(nameof(context));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
     
@@ -78,9 +85,9 @@ public sealed class ControllerExample:
         try
         {
             _logger.LogInformation($"Got request body: {modelExampleInstance}");
-
+            // _context.ModelExamples.Add(modelExampleInstance);
             //
-
+            // await _context.SaveChangesAsync();
             return StatusCode(StatusCodes.Status200OK);
         }
         catch (Exception ex)

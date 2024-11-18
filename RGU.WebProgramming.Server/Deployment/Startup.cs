@@ -6,8 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System.Reflection;
-
+using Microsoft.EntityFrameworkCore;
 using RGU.WebProgramming.Server.Core;
+using RGU.WebProgramming.Server.DbContext;
 using RGU.WebProgramming.Server.Settings;
 
 namespace RGU.WebProgramming.Server.Deployment;
@@ -147,6 +148,14 @@ internal static class Startup
         IServiceCollection services)
     {
         CatchUnhandledExceptions();
+        
+        var connectionString =  ctx.Configuration.GetValue<string>("DatabaseConnections:postgres");
+        
+        Console.WriteLine(connectionString);
+        
+        services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseNpgsql(connectionString));
+
         
         services
             .AddOptions()

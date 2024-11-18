@@ -9,10 +9,12 @@
     
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\RGU.WebProgramming.Server.Core\RGU.WebProgramming.Server.Core.csproj" />
+      <ProjectReference Include="..\RGU.WebProgramming.Server.DbContext\RGU.WebProgramming.Server.DbContext.csproj" />
       <ProjectReference Include="..\RGU.WebProgramming.Server.REST.Models\RGU.WebProgramming.Server.REST.Models.csproj" />
     </ItemGroup>
 

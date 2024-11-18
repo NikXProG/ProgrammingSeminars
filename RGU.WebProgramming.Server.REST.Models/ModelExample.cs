@@ -1,20 +1,34 @@
-﻿using Newtonsoft.Json;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace RGU.WebProgramming.Server.REST.Models;
 
 /// <summary>
 /// 
 /// </summary>
+[Table("authors")]
 public class ModelExample
 {
     
     #region Properties
     
+    [Key]
+    public int Id { 
+        
+        get;
+        
+        set;
+        
+    }
+    
     /// <summary>
     /// 
     /// </summary>
-    [JsonProperty("int_value")]
-    public int IntValue
+    [Required]
+    [MaxLength(100)]
+    [JsonProperty("last_name")]
+    public string LastName
     {
         get;
 
@@ -24,8 +38,10 @@ public class ModelExample
     /// <summary>
     /// 
     /// </summary>
-    [JsonProperty("string_value")]
-    public string StringValue
+    [Required]
+    [MaxLength(100)]
+    [JsonProperty("first_name")]
+    public string FirstName
     {
         get;
 
@@ -42,7 +58,9 @@ public class ModelExample
     /// <returns></returns>
     public override string ToString()
     {
-        return $"\"IntValue\": {IntValue}, \"StringValue\": \"{StringValue}\"";
+        
+        return $"\"LastName\": {LastName}, \"FirstName\": {FirstName}";
+        
     }
 
     #endregion
