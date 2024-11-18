@@ -10,9 +10,4 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\RGU.WebProgramming.Domain.Models\RGU.WebProgramming.Domain.Models.csproj" />
-      <ProjectReference Include="..\RGU.WebProgramming.Server.REST.Models\RGU.WebProgramming.Server.REST.Models.csproj" />
-    </ItemGroup>
-
 </Project>

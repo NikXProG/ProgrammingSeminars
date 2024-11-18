@@ -26,9 +26,9 @@
 
     <ItemGroup>
         <ProjectReference Include="..\RGU.WebProgramming.Server.Core\RGU.WebProgramming.Server.Core.csproj" />
-        <ProjectReference Include="..\RGU.WebProgramming.Server.DbContext\RGU.WebProgramming.Server.DbContext.csproj" />
+        <ProjectReference Include="..\RGU.WebProgramming.Server.REST.DbContext\RGU.WebProgramming.Server.REST.DbContext.csproj" />
         <ProjectReference Include="..\RGU.WebProgramming.Server.Grpc\RGU.WebProgramming.Server.Grpc.csproj" />
-        <ProjectReference Include="..\RGU.WebProgramming.Server.Grpc.MyFirstServiceImplementation\RGU.WebProgramming.Server.Grpc.MyFirstServiceImplementation.csproj" />
+        <ProjectReference Include="..\RGU.WebProgramming.Server.Grpc.AuthorServiceImplementation\RGU.WebProgramming.Server.Grpc.AuthorServiceImplementation.csproj" />
         <ProjectReference Include="..\RGU.WebProgramming.Server.REST.API\RGU.WebProgramming.Server.REST.API.csproj" />
         <ProjectReference Include="..\RGU.WebProgramming.Server.REST.Models\RGU.WebProgramming.Server.REST.Models.csproj" />
     </ItemGroup>

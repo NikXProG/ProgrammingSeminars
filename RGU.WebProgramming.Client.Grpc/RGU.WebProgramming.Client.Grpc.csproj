@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Protobuf Include="..\Protos\hello_grpc.proto" Link="Protos\kek.proto" GrpcServices="Client" />
+        <Protobuf Include="..\Protos\authors.proto" GrpcServices="None" />
     </ItemGroup>
 
 </Project>

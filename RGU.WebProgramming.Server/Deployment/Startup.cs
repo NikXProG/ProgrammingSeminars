@@ -8,7 +8,7 @@ using Serilog;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using RGU.WebProgramming.Server.Core;
-using RGU.WebProgramming.Server.DbContext;
+using RGU.WebProgramming.Server.REST.DbContext;
 using RGU.WebProgramming.Server.Settings;
 
 namespace RGU.WebProgramming.Server.Deployment;
@@ -150,12 +150,9 @@ internal static class Startup
         CatchUnhandledExceptions();
         
         var connectionString =  ctx.Configuration.GetValue<string>("DatabaseConnections:postgres");
-        
-        Console.WriteLine(connectionString);
-        
+
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(connectionString));
-
         
         services
             .AddOptions()

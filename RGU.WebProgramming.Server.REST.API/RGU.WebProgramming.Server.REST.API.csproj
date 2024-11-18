@@ -14,7 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RGU.WebProgramming.Server.Core\RGU.WebProgramming.Server.Core.csproj" />
-      <ProjectReference Include="..\RGU.WebProgramming.Server.DbContext\RGU.WebProgramming.Server.DbContext.csproj" />
+      <ProjectReference Include="..\RGU.WebProgramming.Server.REST.DbContext\RGU.WebProgramming.Server.REST.DbContext.csproj" />
       <ProjectReference Include="..\RGU.WebProgramming.Server.REST.Models\RGU.WebProgramming.Server.REST.Models.csproj" />
     </ItemGroup>
 

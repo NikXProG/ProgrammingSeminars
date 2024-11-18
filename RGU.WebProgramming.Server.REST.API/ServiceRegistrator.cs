@@ -21,8 +21,14 @@ public sealed class ServiceRegistrator:
     {
         registrator.RegisterMany<ApplicationConfigurator>(Reuse.Singleton);
         registrator.Register<IWebHostConfigurator, WebHostConfigurator>(Reuse.Singleton);
-        registrator.Register<ControllerExample>(Reuse.Singleton);
 
+        #region Controllers
+
+        registrator.Register<ControllerAuthors>(Reuse.Singleton);
+        registrator.Register<ControllerBooks>(Reuse.Singleton);
+
+        #endregion
+        
         // TODO: maybe some other types will be registered
     }
     

@@ -14,7 +14,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <Protobuf Include="..\Protos\hello_grpc.proto" Link="Protos\kek.proto" GrpcServices="None" />
+        <Protobuf Include="..\Protos\authors.proto" GrpcServices="None" />
     </ItemGroup>
 
     <ItemGroup>

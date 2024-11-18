@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using RGU.WebProgramming.Client.Grpc;
 using RGU.WebProgramming.Domain.Converters;
 using RGU.WebProgramming.Grpc;
+using Empty = Google.Protobuf.WellKnownTypes.Empty;
 
 namespace RGU.WebProgramming.Client.API;
 
@@ -60,9 +61,9 @@ internal sealed class HostMediator
     /// 
     /// </summary>
     /// <returns></returns>
-    private MyFirstService.MyFirstServiceClient CreateClient()
+    private AuthorService CreateClient()
     {
-        return new MyFirstService.MyFirstServiceClient(_grpcChannelFactory.Create());
+        return new AuthorModel.MyFirstServiceClient(_grpcChannelFactory.Create());
     }
     
     #endregion

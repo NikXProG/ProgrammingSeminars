@@ -32,7 +32,8 @@ public class ApplicationConfigurator:
     {
         services
             .AddControllers()
-            .AddApplicationPart(typeof(ControllerExample).Assembly)
+            .AddApplicationPart(typeof(ControllerAuthors).Assembly)
+            .AddApplicationPart(typeof(ControllerBooks).Assembly)
             .AddNewtonsoftJson();
     }
     

@@ -6,42 +6,54 @@ using RGU.WebProgramming.Client.Grpc;
 using RGU.WebProgramming.Client.Grpc.Settings;
 using RGU.WebProgramming.Grpc;
 
+
+
 var hostMediator = new HostMediator(new GrpcChannelFactory(Options.Create(new GrpcClientSettings
 {
     TargetAddress = "127.0.0.1:5055"
 })), Options.Create(new HostMediatorSettings
 {
-
+    // Настройки
 }), null);
 
-CancellationTokenSource obj = new CancellationTokenSource();
-await FooAsync();
-await FooAsync(obj.Token);
-obj.Dispose();
-    
-//var clientService = hostMediator.;
+var clientService = hostMediator;
 
-//var result = await clientService.MyFirstRPCAsync(new Empty());
-//Console.WriteLine($"Value == {result.Value}, Abrakadabra == {result.Abrakadabra}");
+var obj = new CancellationTokenSource();
 
-async Task<int> FooAsync(
-    CancellationToken cancellationToken = default)
+try
+{
+    await FooAsync(obj.Token);
+}
+catch (OperationCanceledException)
+{
+    Console.WriteLine("Operation was cancelled.");
+}
+finally
+{
+    obj.Dispose();
+}
+
+
+async Task<int> FooAsync(CancellationToken cancellationToken = default)
 {
     return await BarAsync(cancellationToken);
 }
 
-async Task<int> BarAsync(
-    CancellationToken cancellationToken = default)
+async Task<int> BarAsync(CancellationToken cancellationToken = default)
 {
     while (true)
     {
+        Console.WriteLine("FooAsync");
+        var result = await clientService.MyFirstRPCAsync(cancellationToken);
+        Console.WriteLine($"Value == {result.Value}, Abrakadabra == {result.Abrakadabra}");
+        // Основная логика
         if (cancellationToken.IsCancellationRequested)
         {
-            // TODO: some logic here...
-            throw new TaskCanceledException();
+            Console.WriteLine("Cancellation requested.");
+
+            return 0;
         }
-        // OperationCanceledException
-        cancellationToken.ThrowIfCancellationRequested();
-        // TODO: main actions
+        await Task.Delay(100); 
     }
+    return 0;
 }

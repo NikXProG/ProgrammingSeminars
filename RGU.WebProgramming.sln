@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{7A3C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.Grpc", "RGU.WebProgramming.Server.Grpc\RGU.WebProgramming.Server.Grpc.csproj", "{FF26EA1B-2ECC-489E-A822-FD9FED956A7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.Grpc.MyFirstServiceImplementation", "RGU.WebProgramming.Server.Grpc.MyFirstServiceImplementation\RGU.WebProgramming.Server.Grpc.MyFirstServiceImplementation.csproj", "{4E7CCFD0-80E9-49E8-9F81-57164AE2747E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.Grpc.AuthorServiceImplementation", "RGU.WebProgramming.Server.Grpc.AuthorServiceImplementation\RGU.WebProgramming.Server.Grpc.AuthorServiceImplementation.csproj", "{4E7CCFD0-80E9-49E8-9F81-57164AE2747E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Client.Grpc", "RGU.WebProgramming.Client.Grpc\RGU.WebProgramming.Client.Grpc.csproj", "{0A2A06F8-C13E-412A-AC0D-E8DA8A72152D}"
 EndProject
@@ -32,7 +32,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.REST.Models", "RGU.WebProgramming.Server.REST.Models\RGU.WebProgramming.Server.REST.Models.csproj", "{678A52BA-8AF6-403D-96E5-8AD1CA6C15DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.DbContext", "RGU.WebProgramming.Server.DbContext\RGU.WebProgramming.Server.DbContext.csproj", "{2EF64168-BFB1-4D27-8B22-9443B4DB72CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.REST.DbContext", "RGU.WebProgramming.Server.REST.DbContext\RGU.WebProgramming.Server.REST.DbContext.csproj", "{2EF64168-BFB1-4D27-8B22-9443B4DB72CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.Grpc.DbContext", "RGU.WebProgramming.Server.Grpc.DbContext\RGU.WebProgramming.Server.Grpc.DbContext.csproj", "{FDFB9356-9091-46C7-B424-496486D34DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGU.WebProgramming.Server.DbContext.Models", "RGU.WebProgramming.Server.DbContext.Models\RGU.WebProgramming.Server.DbContext.Models.csproj", "{3C033733-6DB7-4A01-B952-599A300C5019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +92,14 @@ Global
 		{2EF64168-BFB1-4D27-8B22-9443B4DB72CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF64168-BFB1-4D27-8B22-9443B4DB72CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF64168-BFB1-4D27-8B22-9443B4DB72CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFB9356-9091-46C7-B424-496486D34DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFB9356-9091-46C7-B424-496486D34DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFB9356-9091-46C7-B424-496486D34DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFB9356-9091-46C7-B424-496486D34DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C033733-6DB7-4A01-B952-599A300C5019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C033733-6DB7-4A01-B952-599A300C5019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C033733-6DB7-4A01-B952-599A300C5019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C033733-6DB7-4A01-B952-599A300C5019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A766CEFA-2410-4C61-B847-A14D6F8C392F} = {09F42673-9081-4071-8552-24B73682E7A8}
@@ -102,6 +114,8 @@ Global
 		{C0557ADA-54B4-48B8-AE28-C1B01B41B550} = {FA3BACCC-FF19-4BA5-B1B8-7F1D6695C239}
 		{3B50E57E-8397-482C-AE34-67212E56201D} = {7A3C2F7B-3390-492B-8500-73F1C77737F8}
 		{678A52BA-8AF6-403D-96E5-8AD1CA6C15DF} = {7A3C2F7B-3390-492B-8500-73F1C77737F8}
-		{2EF64168-BFB1-4D27-8B22-9443B4DB72CF} = {8D0EDA0B-4D6D-466D-B94C-263820ED6C4E}
+		{2EF64168-BFB1-4D27-8B22-9443B4DB72CF} = {7A3C2F7B-3390-492B-8500-73F1C77737F8}
+		{FDFB9356-9091-46C7-B424-496486D34DB2} = {7A3C2F7B-3390-492B-8500-73F1C77737F8}
+		{3C033733-6DB7-4A01-B952-599A300C5019} = {7A3C2F7B-3390-492B-8500-73F1C77737F8}
 	EndGlobalSection
 EndGlobal
